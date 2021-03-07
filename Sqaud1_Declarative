@@ -66,7 +66,7 @@ pipeline {
         }
         stage('Nexus Notification') {
             steps {
-                slackSend channel: "devopsbc3assignment", message: "SQUAD1 - Uplocad to Artifact successfull!!"
+                slackSend channel: "devopsbc3assignment", message: "SQUAD1 - Uplocad to Artifact successfull!!!"
             }
         }
     
