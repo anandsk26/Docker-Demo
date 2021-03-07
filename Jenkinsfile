@@ -109,7 +109,7 @@ pipeline {
         
         stage('Prod Deploy Notification') {
             steps {
-                slackSend channel: "devopsbc3assignment", message: "SQUAD1 - Deploy to Prod successfull!!"
+                slackSend channel: "devopsbc3assignment", message: "SQUAD1 - Deploy to Prod successfull!!!"
             }
         }
         
