@@ -39,12 +39,19 @@ pipeline {
                 echo 'Entered inside my Build'
                 sh 'mvn package -f pom.xml'
             }
+            post {
+				always {
+					jiraSendBuildInfo branch: 'DEV-1-devops1', site: 'team-1615132910754.atlassian.net'
+                }
+            }
         }
         stage('Build Notification') {
             steps {
                 slackSend channel: "devopsbc3assignment", message: "SQUAD1 - Build successfull!!"
             }
         }
+        
+        
         stage('Upload Artifact') {
             steps {
                 nexusArtifactUploader artifacts: [
@@ -66,7 +73,7 @@ pipeline {
         }
         stage('Nexus Notification') {
             steps {
-                slackSend channel: "devopsbc3assignment", message: "SQUAD1 - Uplocad to Artifact successfull!!!"
+                slackSend channel: "devopsbc3assignment", message: "SQUAD1 - Uplocad to Artifact successfull!!"
             }
         }
     
@@ -82,12 +89,12 @@ pipeline {
             }
         }
         
-        stage('Performance Test') {
+        /*stage('Performance Test') {
             steps {
                 echo 'Entered Blazemeter run'
-                blazeMeterTest credentialsId: 'Blazemeter', testId: '9015214.taurus', workspaceId: '756835'
+                blazeMeterTest credentialsId: 'Blazemeter', testId: '9014503.taurus', workspaceId: '756005'
             }
-        }
+        }*/
         stage('Performance Notification') {
             steps {
                 slackSend channel: "devopsbc3assignment", message: "SQUAD1 - Performance test successfull!!"
