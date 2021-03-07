@@ -31,7 +31,7 @@ pipeline {
         
         stage('Sonarqube Notification') {
             steps {
-                slackSend channel: "devopsbc3assignment", message: "SQUAD1 - Code Analysis successfull!!!"
+                slackSend channel: "devopsbc3assignment", message: "SQUAD1 - Code Analysis successfull!!"
             }
         }
         stage('Build') {
