@@ -89,12 +89,7 @@ pipeline {
             }
         }
         
-        stage('Performance Test') {
-            steps {
-                echo 'Entered Blazemeter run'
-                blazeMeterTest credentialsId: 'Blazemeter', testId: '9015214.taurus', workspaceId: '756835'
-            }
-        }
+       
         stage('Performance Notification') {
             steps {
                 slackSend channel: "devopsbc3assignment", message: "SQUAD1 - Performance test successfull!!"
