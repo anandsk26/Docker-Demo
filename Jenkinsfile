@@ -17,7 +17,7 @@ pipeline {
         
         stage('Checkout Notification') {
             steps {
-                slackSend channel: "devopsbc3assignment", message: "SQUAD1 - Checkout successfull!!"
+                slackSend channel: "devopsbc3assignment", message: "SQUAD1 - Checkout successfull!!!"
             }
         }
         
